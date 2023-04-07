@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContacts } from 'redux/contactsSlice';
-import { getContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 import { Form, Input, Button } from './ContactForm.styles';
 import { nanoid } from 'nanoid';
 
 export default function ConstactForm() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
 
@@ -35,7 +35,7 @@ export default function ConstactForm() {
     if (trueFilter) {
       return alert(`${name} is already in contacts.`);
     }
-    dispatch(addContacts({ name, number, id: nanoid() }));
+    dispatch(addContact({ name, number, id: nanoid() }));
     setName('');
     setNumber('');
   };

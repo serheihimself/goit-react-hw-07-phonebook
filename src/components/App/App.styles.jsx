@@ -6,7 +6,7 @@ export const Container = styled.div`
   margin: auto;
   margin-top: 20px;
   padding: 20px;
-  background: #87cefa;
+  background: #6495ed;
   border-radius: 6%;
 `;
 export const Title = styled.h1`

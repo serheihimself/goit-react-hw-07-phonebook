@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://642eb9038ca0fe3352d71864.mockapi.io';
+axios.defaults.baseURL = 'https://642eb9038ca0fe3352d71864.mockapi.io/contacts';
 
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContacts',
@@ -11,7 +11,7 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 export const addContact = createAsyncThunk(
-  'contacts/addContacts',
+  'contacts/addContact',
   async newContact => {
     try {
       const response = await axios.post('/contacts', newContact);
