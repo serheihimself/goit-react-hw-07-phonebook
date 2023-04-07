@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts, getFilterValue } from 'redux/contactsSlice';
-import { deleteContacts } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/contactsSlice';
 
 export default function ContactList() {
   const contacts = useSelector(getContacts);
