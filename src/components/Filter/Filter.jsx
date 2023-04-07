@@ -1,7 +1,7 @@
 import React from 'react';
-import { filterContact } from '../../redux/boxSlice';
+import { filterContact } from '../../redux/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilterValue } from 'redux/boxSlice';
+import { getFilterValue } from 'redux/contactsSlice';
 
 export default function Filter() {
   const dispatch = useDispatch();

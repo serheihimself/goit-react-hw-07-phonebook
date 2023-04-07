@@ -2,7 +2,7 @@ import ConstactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
 import ContactList from 'components/ContactList/ContactList ';
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/boxSlice';
+import { getContacts } from 'redux/contactsSlice';
 import { Container, Title, SecondTitle } from './App.styles';
 
 export default function App() {
