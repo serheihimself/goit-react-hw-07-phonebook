@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectFilterValue } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
+import { Ul, Text, DeleteButton } from './ContactList.styles';
 
 export default function ContactList() {
   const contacts = useSelector(selectContacts);
@@ -17,17 +18,20 @@ export default function ContactList() {
   const filteredContacts = filterContacts();
 
   return (
-    <ul>
+    <Ul>
       {filteredContacts.map(({ name, number, id }) => (
         <li key={id}>
-          <p>
+          <Text>
             {name}: {number}
-          </p>
-          <button type="button" onClick={() => dispatch(deleteContact(id))}>
+          </Text>
+          <DeleteButton
+            type="button"
+            onClick={() => dispatch(deleteContact(id))}
+          >
             Delete
-          </button>
+          </DeleteButton>
         </li>
       ))}
-    </ul>
+    </Ul>
   );
 }

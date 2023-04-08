@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
-import { Form, Input, Button } from './ContactForm.styles';
+import { Form, Label, Input, Button } from './ContactForm.styles';
 import { nanoid } from 'nanoid';
 
 export default function ConstactForm() {
@@ -42,7 +42,7 @@ export default function ConstactForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name</label>
+      <Label htmlFor="name">Name</Label>
       <Input
         type="text"
         name="name"
@@ -52,7 +52,7 @@ export default function ConstactForm() {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
       />
-      <label htmlFor="number">Number</label>
+      <Label htmlFor="number">Number</Label>
       <Input
         type="tel"
         name="number"

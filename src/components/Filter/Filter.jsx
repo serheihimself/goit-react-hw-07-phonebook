@@ -2,6 +2,7 @@ import React from 'react';
 import { setFilter } from 'redux/filterSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilterValue } from 'redux/selectors';
+import { FilterInput } from './Filter.styles';
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export default function Filter() {
     dispatch(setFilter(evt.target.value));
   };
   return (
-    <input
+    <FilterInput
       type="text"
       name="filter"
       value={filterValue}

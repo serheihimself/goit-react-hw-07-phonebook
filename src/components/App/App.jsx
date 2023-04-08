@@ -1,9 +1,16 @@
 import ConstactForm from 'components/ContactForm/ContactForm';
 import Filter from 'components/Filter/Filter';
-import ContactList from 'components/ContactList/ContactList ';
+import ContactList from 'components/ContactList/ContactList';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts, selectLoading, selectError } from 'redux/selectors';
-import { Container, Title, SecondTitle } from './App.styles';
+import {
+  Container,
+  Overlay,
+  Title,
+  SecondOverlay,
+  SecondTitle,
+  ThirdTitle,
+} from './App.styles';
 import { fetchContacts } from 'redux/operations';
 import { useEffect } from 'react';
 
@@ -20,17 +27,21 @@ export default function App() {
   return (
     <Container>
       <Title>Phonebook</Title>
-      <ConstactForm />
-      <SecondTitle>Contacts</SecondTitle>
-      {contacts.length > 0 ? (
-        <>
-          <Filter />
-          <ContactList />
-        </>
-      ) : (
-        <p>No any contacts in phonebook</p>
-      )}
-      {isLoading && !error && <b>Request in progress...</b>}
+      <Overlay>
+        <ConstactForm />
+      </Overlay>
+      <SecondOverlay>
+        <SecondTitle>Contacts</SecondTitle>
+        {contacts.length > 0 ? (
+          <>
+            <Filter />
+            <ContactList />
+          </>
+        ) : (
+          <ThirdTitle>No any contacts in phonebook</ThirdTitle>
+        )}
+        {isLoading && !error && <b>Loading...</b>}
+      </SecondOverlay>
     </Container>
   );
 }
